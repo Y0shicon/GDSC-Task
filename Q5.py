@@ -38,7 +38,7 @@ while True:
     choice = int(input("Enter your choice : "))
 
     if choice == 1:
-        item = int(input("Enter the item to be pushed : "))
+        item = float(input("Enter the item to be pushed : "))
         stack.push(item)
     elif choice == 2:
         item = stack.pop()
@@ -48,7 +48,7 @@ while True:
         returnList = stack.returnList()
         print("Stack contains : ", end="")
         for item in returnList:
-            print(item, end=" ")
+            print(round(item, 4), end=" ")
         print()
 
     elif choice == 4:
