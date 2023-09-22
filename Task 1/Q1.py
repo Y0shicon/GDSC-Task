@@ -1,6 +1,6 @@
-test = int(input("Enter the number of test cases : "))
+test = int(input())
 while (test > 0):
-    string1, string2 = input("Enter the two strings : ").split()
+    string1, string2 = input().split()
     for char in string1:
         if char not in string2:
             print("NO")

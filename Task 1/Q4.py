@@ -1,7 +1,7 @@
-t = int(input("Enter the number of test cases : "))
+t = int(input())
 
 while (t > 0):
-    string = input("Enter the string : ")
+    string = input()
 
     # Checking if the alternate ends are different as we move towards the middle
     break_index = len(string)//2 #Assigning gibberish value to break_index

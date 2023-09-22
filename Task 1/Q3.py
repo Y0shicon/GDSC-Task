@@ -1,14 +1,12 @@
-n = int(input("Enter the number of rows and columns : "))
+n = int(input())
 
 # Take values for matrix 1
-print("Enter the values for matrix 1 : ")
 matrix1 = []
 for i in range(n):
     row = input().split()
     matrix1.append(row)
 
 # Take values for matrix 2
-print("Enter the values for matrix 2 : ")
 matrix2 = []
 for i in range(n):
     row = input().split()
@@ -33,4 +31,4 @@ for i in range(n):
     sum += result[i][i]
 
 # Print the sum
-print("The sum of the diagonal elements is", sum)
+print(sum)
