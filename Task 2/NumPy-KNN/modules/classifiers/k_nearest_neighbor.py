@@ -76,13 +76,7 @@ class KNearestNeighbor(object):
                 #####################################################################
                 # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-                print("X[i]: ", X[i])
-                print("self.X_train[j]: ", self.X_train[j])
-                print("X[i] - self.X_train[j]: ", X[i] - self.X_train[j])
-                print("(X[i] - self.X_train[j])**2: ", (X[i] - self.X_train[j])**2)
-                print("np.sum((X[i] - self.X_train[j])**2): ", np.sum((X[i] - self.X_train[j])**2))
-                print("np.sqrt(np.sum((X[i] - self.X_train[j])**2)): ", np.sqrt(np.sum((X[i] - self.X_train[j])**2)))
-                print("np.sqrt(np.sum((X[i] - self.X_train[j])**2)).shape: ", np.sqrt(np.sum((X[i] - self.X_train[j])**2)).shape)
+                dists[i][j] = np.sqrt(np.sum(np.square(X[i] - self.X_train[j])))
 
                 # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
