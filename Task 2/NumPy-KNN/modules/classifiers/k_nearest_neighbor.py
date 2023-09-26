@@ -76,17 +76,6 @@ class KNearestNeighbor(object):
                 #####################################################################
                 # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-                if i == 0 and j == 0:
-                    print("X[i]: ", X[i])
-                    print("self.X_train[j]: ", self.X_train[j])
-                    print("X[i] - self.X_train[j]: ", X[i] - self.X_train[j])
-                    print("np.square(X[i] - self.X_train[j]): ",
-                          np.square(X[i] - self.X_train[j]))
-                    print("np.sum(np.square(X[i] - self.X_train[j])): ",
-                          np.sum(np.square(X[i] - self.X_train[j])))
-                    print("np.sqrt(np.sum(np.square(X[i] - self.X_train[j]))): ", np.sqrt(
-                        np.sum(np.square(X[i] - self.X_train[j]))))
-
                 dists[i][j] = np.sqrt(
                     np.sum(np.square(X[i] - self.X_train[j])))
 
@@ -142,7 +131,7 @@ class KNearestNeighbor(object):
         #########################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        dists = np.sqrt(np.sum(np.square(X[:, np.newaxis] - self.X_train), axis=2))
+        dists = np.sqrt(np.sum(X**2, axis=1).reshape(num_test, 1) + np.sum(self.X_train**2, axis=1) - 2 * X.dot(self.X_train.T))
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
